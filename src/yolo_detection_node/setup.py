@@ -1,4 +1,6 @@
 from setuptools import find_packages, setup
+import os
+from glob import glob
 
 package_name = 'yolo_detection_node'
 
@@ -10,6 +12,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -24,6 +27,10 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'yolo_detector = yolo_detection_node.yolo_detector:main',
+            'dataset_harvester = yolo_detection_node.dataset_harvester:main',
+            'tracking_node = yolo_detection_node.tracking_node:main',
+            'reconstruction_node = yolo_detection_node.reconstruction_node:main'
         ],
     },
 )

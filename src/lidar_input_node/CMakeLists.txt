@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(zed_input_node)
+project(lidar_input_node)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -9,22 +9,13 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
-find_package(cv_bridge REQUIRED)
-find_package(image_transport REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(laser_geometry REQUIRED)
 
-include_directories(include)
+add_executable(lidar_input_node src/lidar_input_node.cpp)
+ament_target_dependencies(lidar_input_node rclcpp sensor_msgs laser_geometry)
 
-add_executable(zed_input_node src/zed_input_node.cpp)
-ament_target_dependencies(zed_input_node rclcpp sensor_msgs cv_bridge image_transport std_msgs)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
-
-install(TARGETS
-  zed_input_node
-  DESTINATION lib/${PROJECT_NAME}
-)
+install(TARGETS lidar_input_node DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

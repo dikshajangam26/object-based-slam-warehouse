@@ -1,0 +1,7 @@
+string class_name
+float64 confidence
+int32 xmin
+int32 ymin
+int32 xmax
+int32 ymax
+int32 tracking_id

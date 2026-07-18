@@ -1,0 +1,63 @@
+%YAML:1.0
+
+# Set this to true to allow approximate time synchronization
+use_approx_sync: true
+# Increase the queue size to give it more "breathing room" to find matches
+queue_size: 20
+
+#--------------------------------------------------------------------------------------------
+# Camera Parameters
+#--------------------------------------------------------------------------------------------
+Camera.type: "PinHole"
+
+Camera.width: 1208
+Camera.height: 720
+
+# Camera calibration and distortion parameters
+Camera.fx: 887.0600163199754
+Camera.fy: 887.0600163199753
+Camera.cx: 640.0
+Camera.cy: 360.0
+
+Camera.k1: 0.0
+Camera.k2: 0.0
+Camera.p1: 0.0
+Camera.p2: 0.0
+
+# Camera baseline * focal length (in pixels)
+Camera.bf: 16.0 
+
+# Camera frames per second 
+Camera.fps: 30.0
+
+# Color order of the images (0: BGR, 1: RGB)
+Camera.RGB: 1
+
+# Depth threshold (for RGB-D only)
+ThDepth: 40.0
+
+# Depth map factor (for ZED, depth is in meters, so we use 1.0)
+DepthMapFactor: 1.0
+
+#--------------------------------------------------------------------------------------------
+# ORB Extractor Parameters
+#--------------------------------------------------------------------------------------------
+ORBextractor.nFeatures: 1000
+ORBextractor.scaleFactor: 1.2
+ORBextractor.nLevels: 8
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#--------------------------------------------------------------------------------------------
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize: 2
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3
+Viewer.ViewpointX: 0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500

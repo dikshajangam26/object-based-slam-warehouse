@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'mapping_node = mapping_node.mapping_node:main',
         ],
     },
 )

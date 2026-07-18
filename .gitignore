@@ -1,12 +1,8 @@
-# ROS 2 Build files
 build/
 install/
 log/
-
-# Python virtual environments
-slam_env/
+ai_env/
+venv/
+*.pyc
 __pycache__/
-
-# ROS 2 Bag files (Sensor recordings)
-*.bag
-*.db3
+.ros/
